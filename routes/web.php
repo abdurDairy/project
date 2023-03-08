@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +23,30 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+/**
+ * ADMIN 
+ * 
+ */
+Route::get('/admin', function () {
+    return view('admin.index');
+})->middleware(['auth', 'role:admin'])->name('admin.index');
+
+/**
+ * 
+ * ROLE PLATE
+ * 
+ */
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/roles', [RoleController::class, 'roles'])->name('roles.index');
+    Route::get('/role-path', [RoleController::class, 'pathRoles'])->name('path.role');
+    Route::post('/insert-roles', [RoleController::class, 'insertRoles'])->name('insert.role');
+
+    Route::get('/permission-path', [PermissionController::class, 'pathPermission'])->name('path.permission');
+    Route::post('/permission-insert', [PermissionController::class, 'insertPermission'])->name('insert.permission');
+    Route::get('/permissions', [PermissionController::class, 'permissions'])->name('permissions.index');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

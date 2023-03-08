@@ -12,6 +12,8 @@
         <meta name="keywords" content="admin template, Rubick Admin Template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="LEFT4CODE">
         <title>Dashboard - Rubick - Bootstrap HTML Admin Template</title>
+        {{-- bootstrap cdn --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="dist/css/app.css"/>
         <!-- END: CSS Assets-->
@@ -1378,12 +1380,14 @@
                 <!-- END: Top Bar -->
                 <div class="grid columns-12 gap-6">
                     <div class="g-col-12 g-col-xxl-9">
-                        <div class="grid columns-12 gap-6">
 
-                            <h1>user account </h1>
-                             {{-- MISSING FETCH --}}
-                             @yield('general-content')
-                        </div>
+
+                            {{-- MISSING FETCH --}}
+                            @yield('admin-content')
+
+
+
+
                     </div>
                     <div class="g-col-12 g-col-xxl-3">
                         <div class="border-start-xxl border-theme-5 dark-border-dark-3 mb-n10 pb-10">
@@ -1406,54 +1410,6 @@
                                                     <div class="text-gray-600 fs-xs mt-0.5">16 July 2021</div>
                                                 </div>
                                                 <div class="text-theme-6">-$62</div>
-                                            </div>
-                                        </div>
-                                        <div class="intro-x">
-                                            <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
-                                                <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-11.jpg">
-                                                </div>
-                                                <div class="ms-4 me-auto">
-                                                    <div class="fw-medium">Denzel Washington</div>
-                                                    <div class="text-gray-600 fs-xs mt-0.5">15 January 2021</div>
-                                                </div>
-                                                <div class="text-theme-6">-$53</div>
-                                            </div>
-                                        </div>
-                                        <div class="intro-x">
-                                            <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
-                                                <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-7.jpg">
-                                                </div>
-                                                <div class="ms-4 me-auto">
-                                                    <div class="fw-medium">Morgan Freeman</div>
-                                                    <div class="text-gray-600 fs-xs mt-0.5">7 July 2022</div>
-                                                </div>
-                                                <div class="text-theme-6">-$42</div>
-                                            </div>
-                                        </div>
-                                        <div class="intro-x">
-                                            <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
-                                                <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-4.jpg">
-                                                </div>
-                                                <div class="ms-4 me-auto">
-                                                    <div class="fw-medium">Tom Cruise</div>
-                                                    <div class="text-gray-600 fs-xs mt-0.5">19 September 2020</div>
-                                                </div>
-                                                <div class="text-theme-9">+$34</div>
-                                            </div>
-                                        </div>
-                                        <div class="intro-x">
-                                            <div class="box px-5 py-3 mb-3 d-flex align-items-center zoom-in">
-                                                <div class="w-10 h-10 flex-none image-fit rounded-circle overflow-hidden">
-                                                    <img alt="Rubick Bootstrap HTML Admin Template" src="dist/images/profile-15.jpg">
-                                                </div>
-                                                <div class="ms-4 me-auto">
-                                                    <div class="fw-medium">Sylvester Stallone</div>
-                                                    <div class="text-gray-600 fs-xs mt-0.5">30 September 2020</div>
-                                                </div>
-                                                <div class="text-theme-6">-$126</div>
                                             </div>
                                         </div>
                                         <a href="index.html" class="intro-x w-full d-block text-center rounded-2 py-3 border border-dotted border-theme-15 dark-border-dark-5 text-theme-16 dark-text-gray-600">View More</a> 
