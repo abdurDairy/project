@@ -21,9 +21,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    // dd(auth()->user()->getRoleNames()->first());
     return view('dashboard');
-})->middleware(['auth', 'verified', 'IsUser'])->name('dashboard');
+})->middleware(['auth', 'verified', 'role:user'])->name('dashboard');
 
 /**
  * ADMIN 
@@ -31,7 +30,7 @@ Route::get('/dashboard', function () {
  */
 Route::get('/admin', function () {
     return view('admin.index');
-})->middleware(['auth', 'isAdmin'])->name('admin.index');
+})->middleware(['auth', 'role:admin'])->name('admin.index');
 
 
 /**
